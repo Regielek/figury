@@ -19,6 +19,7 @@ public class Main
         System.out.println("1. Trójkąt");
         System.out.println("2. Kwadrat");
         System.out.println("3. Prostokąt");
+        System.out.println("4. Trójkąt równoboczny");
 
         System.out.print("Podaj opcję: ");
 
@@ -69,6 +70,19 @@ public class Main
                     for (int m = 1; m <= y; m++) {
                         System.out.print(h);
                     }
+                }
+                ABC = false;
+                break;
+
+            case "4":
+                System.out.print("Podaj wysokość trójkąta równobocznego: ");
+                x = in.nextInt();
+
+                for (int z = 1; z <= x; z++)
+                {
+                    for (int m = 2; (m-x+x) <= z+(z-1); m++)
+                        System.out.print(h);
+                    System.out.println(h);
                 }
                 ABC = false;
                 break;
