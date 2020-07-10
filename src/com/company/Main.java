@@ -2,15 +2,19 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args)
     {
         String down;
         int x, y;
         char h = '*';
+        boolean ABC = true;
 
         Scanner in = new Scanner(System.in);
 
+        do
+        {
         System.out.println("0. Wyjście z programu");
         System.out.println("1. Trójkąt");
         System.out.println("2. Kwadrat");
@@ -19,38 +23,38 @@ public class Main {
         System.out.print("Podaj opcję: ");
 
         down = in.nextLine();
-        switch (down)
-        {
+            switch (down)
+            {
             case "0":
                 System.out.println("Wyszedłeś z programu!");
+                ABC = false;
                 break;
 
             case "1":
                 System.out.print("Podaj wysokość trójkąta: ");
                 x = in.nextInt();
 
-                for (int z = 1; z <= x; z++)
-                {
+                for (int z = 1; z <= x; z++) {
                     for (int m = 1; m <= z; m++)
                         System.out.print(h);
-                        System.out.println();
+                    System.out.println();
                 }
+                ABC = false;
                 break;
 
             case "2":
                 System.out.print("Podaj szerokość boków kwadratu: ");
                 x = in.nextInt();
 
-                for (int z = 1; z <= x; z++)
-                {
+                for (int z = 1; z <= x; z++) {
                     System.out.println();
 
-                    for (int m = 1; m <= x; m++)
-                    {
+                    for (int m = 1; m <= x; m++) {
                         System.out.print(h);
                     }
 
                 }
+                ABC = false;
                 break;
 
             case "3":
@@ -59,19 +63,20 @@ public class Main {
                 System.out.print("Podaj szerokość boku prostokąta: ");
                 y = in.nextInt();
 
-                for (int z = 1; z <= x; z++)
-                {
+                for (int z = 1; z <= x; z++) {
                     System.out.println();
 
-                    for (int m = 1; m <= y; m++)
-                    {
+                    for (int m = 1; m <= y; m++) {
                         System.out.print(h);
                     }
                 }
+                ABC = false;
                 break;
 
             default:
                 System.out.println("Nie ma takiej opcji!");
-        }
+                ABC = true;
+            }
+        }while (ABC);
     }
 }
